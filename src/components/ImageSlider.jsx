@@ -44,11 +44,12 @@ export default function ImageSlider() {
           <SwiperSlide key={index}>
             <img
               src={src}
-              alt={`Slide ${index + 1}`}
+              alt={`Tennis photo ${index + 1}`}
+              loading="lazy"
               className="w-full object-contain"
               style={{
-                height: "clamp(220px, 40vw, 500px)", // ✅ 自适应高度
-                borderRadius: "12px"                  // ✅ 圆角美观
+                height: "clamp(220px, 40vw, 500px)",
+                borderRadius: "12px"
               }}
             />
           </SwiperSlide>
