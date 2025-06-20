@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === 全局基础样式 === */
+body {
+  font-family: "Tinos", serif;
+  background-image: url("/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  cursor: url('/images/tennis-cursor-final.png') 0 0, auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* === 自定义动画 === */
+
+/* 缓慢上下跳动 */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 2.8s infinite ease-in-out;
+}
+
+/* 旋转动画 */
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* 心跳缩放动画 */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+.emoji-heartbeat {
+  display: inline-block;
+  animation: heartbeat 1.4s infinite ease-in-out;
+}
+
+/* Emoji 跳动动画 */
+@keyframes bounce-emoji {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+.emoji-bounce {
+  display: inline-block;
+  animation: bounce-emoji 1.6s infinite ease-in-out;
+}
+@keyframes emoji-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.emoji-spin {
+  display: inline-block;
+  animation: emoji-spin 6s linear infinite;
+}
+
+@keyframes emoji-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+.emoji-pulse {
+  display: inline-block;
+  animation: emoji-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+.emoji-heartbeat {
+  display: inline-block;
+  animation: heartbeat 1.4s infinite ease-in-out;
+}
+
+@keyframes bounce-emoji {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.emoji-bounce {
+  display: inline-block;
+  animation: bounce-emoji 1.6s infinite ease-in-out;
+}
