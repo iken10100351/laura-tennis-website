@@ -10,7 +10,7 @@ export default function AboutEducation() {
       {/* 左侧图片 */}
       <div className="w-full md:w-1/2">
         <img
-          src="/images/hero15.jpg"
+          src="/images/hero12.webp"
           alt="Laura studying"
           className="rounded-lg shadow-md object-cover w-full h-auto max-h-[320px]"
         />

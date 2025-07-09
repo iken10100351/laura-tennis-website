@@ -10,7 +10,7 @@ export default function MajorEventExperience() {
       {/* 右侧图片 */}
       <div className="w-full md:w-1/2">
         <img
-          src="/images/aoevens.jpg"
+          src="/images/aoevens.webp"
           alt="Major Event Experience"
           className="rounded-lg shadow-md object-cover w-full h-auto max-h-[320px]"
         />

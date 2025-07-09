@@ -10,12 +10,12 @@ export default function CareerHighlights() {
       {/* 左侧两张图片垂直排列 */}
       <div className="w-full md:w-1/2 flex flex-col gap-4">
         <img
-          src="/images/hero5.jpg"
+          src="/images/hero4.webp"
           alt="Career Moment 1"
           className="rounded-lg shadow-md object-cover w-full h-auto max-h-[300px]"
         />
         <img
-          src="/images/career2.jpg"
+          src="/images/career2.webp"
           alt="Career Moment 2"
           className="rounded-lg shadow-md object-cover w-full h-auto max-h-[300px]"
         />

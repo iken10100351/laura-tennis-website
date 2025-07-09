@@ -1,32 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-// 轮播图像数组
+// 图片数组
 const images = [
-  "/images/hero1.jpg",
-  "/images/hero2.jpg",
-  "/images/hero3.jpg",
-  "/images/hero4.jpg",
-  "/images/hero5.jpg",
-  "/images/hero6.jpg",
-  "/images/hero7.jpg",
-  "/images/hero8.jpg",
-  "/images/hero9.jpg",
-  "/images/hero10.jpg",
-  "/images/hero11.jpg",
-  "/images/hero12.jpg",
-  "/images/hero13.jpg",
-  "/images/hero14.jpg",
-  "/images/hero15.jpg",
-  "/images/hero16.jpg",
-  "/images/hero17.jpg",
-  "/images/hero18.jpg",
-  "/images/hero19.jpg",
-  "/images/hero20.jpg",
-  "/images/hero21.jpg"
+  "/images/hero1.webp",
+  "/images/hero2.webp",
+  "/images/hero3.webp",
+  "/images/hero4.webp",
+  "/images/hero5.webp",
+  "/images/hero6.webp",
+  "/images/hero7.webp",
+  "/images/hero8.webp",
+  "/images/hero9.webp",
+  "/images/hero10.webp",
+  "/images/hero11.webp",
+  "/images/hero12.webp",
+  "/images/hero13.webp",
+  "/images/hero14.webp",
+  "/images/hero15.webp",
+  "/images/hero16.webp",
+  "/images/hero17.webp",
+  "/images/career2.webp",
+  "/images/career1.webp"
+
 ];
 
 export default function ImageSlider() {
@@ -39,22 +38,41 @@ export default function ImageSlider() {
         autoplay={{ delay: 3000 }}
         pagination={{ clickable: true }}
         loop={true}
+        lazy={{ loadPrevNext: true }}
+        watchSlidesProgress={true}
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
-            <img
-              src={src}
-              alt={`Tennis photo ${index + 1}`}
-              loading="lazy"
-              className="w-full object-contain"
-              style={{
-                height: "clamp(220px, 40vw, 500px)",
-                borderRadius: "12px"
-              }}
-            />
+            <LazyImage src={src} alt={`Tennis photo ${index + 1}`} />
           </SwiperSlide>
         ))}
       </Swiper>
+    </div>
+  );
+}
+
+// ✅ 封装图片组件：自带 loading 动画
+function LazyImage({ src, alt }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full">
+      {!loaded && (
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-gray-200 animate-pulse rounded-xl z-10"
+          style={{ height: "clamp(220px, 40vw, 500px)" }}
+        />
+      )}
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        onLoad={() => setLoaded(true)}
+        className={`w-full object-contain transition-opacity duration-700 ease-in-out rounded-xl ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+        style={{ height: "clamp(220px, 40vw, 500px)" }}
+      />
     </div>
   );
 }
