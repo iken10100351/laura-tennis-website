@@ -13,7 +13,11 @@ export default function AboutQualifications() {
     "/images/cert5.jpg",
     "/images/cert6.jpg",
     "/images/cert7.jpg",
-    "/images/cert8.jpg"
+    "/images/cert8.jpg",
+    "/images/atpca_advance.webp",
+    "/images/newcard.webp",
+    "/images/first_aid.webp"
+
   ];
 
   return (
@@ -53,7 +57,8 @@ export default function AboutQualifications() {
           <li>Tennis Australia Community Coaching Qualification</li>
           <li>Tennis Australia Junior Development Qualification</li>
           <li>ATPCA Graduate Pro Qualification</li>
-          <li>ATPCA Advanced Pro Qualification (In progress)</li>
+          <li>ATPCA Advanced Pro Qualification </li>
+          <li>First Aid</li>
         </ul>
       </div>
     </section>
